@@ -3,6 +3,7 @@
  
  # Crie um ambiente python virtual no linux
  python3.6 -m venv venv
+ 
  source venv/bin/activate
  
  # intalar requesitos e bibliotecas
