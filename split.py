@@ -5,7 +5,7 @@ separator = Separator('spleeter:5stems')
 
 separator = Separator('path/to/config.json')
 
-createSeparator = lambda number: Separator(f'spleeter:{number}stems')
+createSeparator = lambda number: Separator('spleeter:{number}stems')
 
 separator = createSeparator(5)
 
