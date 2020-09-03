@@ -1,16 +1,9 @@
 from spleeter.separator import Separator
 
+def separa(number,wave):    
+    separator = Separator(f"spleeter:{number}stems")
+    audio_file = wave
+    destination = 'files/separate'
+    separator.separate_to_file(audio_file, destination)
 
-separator = Separator('spleeter:5stems')
-
-separator = Separator('path/to/config.json')
-
-createSeparator = lambda number: Separator('spleeter:{number}stems')
-
-separator = createSeparator(5)
-
-audio_file = 'files/It dont mean i think_ master.mp3'
-destination = 'files/separate'
-
-separator.separate_to_file(audio_file, destination)
-
+separa(4, "files/It dont mean i think_ master.mp3")
