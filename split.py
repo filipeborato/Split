@@ -5,5 +5,3 @@ def separa(number,wave):
     audio_file = wave
     destination = 'files/separate'
     separator.separate_to_file(audio_file, destination)
-
-separa(4, "files/It dont mean i think_ master.mp3")
