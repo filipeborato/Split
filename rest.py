@@ -5,7 +5,7 @@ import wave
 import numpy as np
 import split
 
-split.separa(2,"files/It dont mean i think_ master.mp3") 
+#split.separa(2,"files/It dont mean i think_ master.mp3") 
 app = Flask(__name__)
 api = Api(app)
 
