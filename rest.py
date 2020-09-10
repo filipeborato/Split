@@ -4,8 +4,8 @@ from werkzeug.datastructures import FileStorage
 import wave
 import numpy as np
 import split
+import os
 
-#split.separa(2,"files/It dont mean i think_ master.mp3") 
 app = Flask(__name__)
 api = Api(app)
 
@@ -16,18 +16,23 @@ class HelloWorld(Resource):
 
 class UploadWavAPI(Resource):
     def post(self):
+        os.system("rm -rf files/separate/audio")
         parse = reqparse.RequestParser()
         parse.add_argument('audio', type=FileStorage, location='files')
 
         args = parse.parse_args()
-
-        stream = args['audio'].stream
-        wav_file = wave.open(stream, 'rb')
-        signal = wav_file.readframes(-1)
-        signal = np.fromstring(signal, 'Int16')
-        fs = wav_file.getframerate()
-        split.separa(4,wav_file)        
-        wav_file.close()       
+        stream = args['audio']
+        #stream = args['audio']
+        stream.save("files/audio.wav")
+        #wav_file = wave.open(stream, 'rb')
+        #signal = wav_file.readframes(-1)
+        #signal = np.fromstring(signal, 'Int16')
+        #fs = wav_file.getframerate() """
+        #wav_file.close()        
+        split.separa(2,"files/audio.wav")
+        #split.separa(4,wav_file)
+        os.system("rm -rf files/audio.wav")
+        return "audio processado pelo split"                        
 
 api.add_resource(HelloWorld, '/')
 
