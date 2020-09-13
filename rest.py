@@ -9,12 +9,13 @@ import os
 app = Flask(__name__)
 api = Api(app)
 
-class HelloWorld(Resource):
+class TesteApi(Resource):
     def get(self):        
-        return {'hello': 'world'}
-            
+        return {'Teste': 'Api'}
+        
+api.add_resource(TesteApi, '/')            
 
-class UploadWavAPI(Resource):
+class UploadDownloadWavAPI(Resource):
     def post(self):
         os.system("rm -rf files/separate/audio")
         parse = reqparse.RequestParser()
@@ -22,21 +23,15 @@ class UploadWavAPI(Resource):
 
         args = parse.parse_args()
         stream = args['audio']
-        #stream = args['audio']
+        
         stream.save("files/audio.wav")
-        #wav_file = wave.open(stream, 'rb')
-        #signal = wav_file.readframes(-1)
-        #signal = np.fromstring(signal, 'Int16')
-        #fs = wav_file.getframerate() """
-        #wav_file.close()        
+               
         split.separa(2,"files/audio.wav")
         #split.separa(4,wav_file)
         os.system("rm -rf files/audio.wav")
         return "audio processado pelo split"                        
 
-api.add_resource(HelloWorld, '/')
-
-api.add_resource(UploadWavAPI, '/upload')
+api.add_resource(UploadDownloadWavAPI, '/upload')
 
 if __name__ == '__main__':
     app.run(debug=True)
