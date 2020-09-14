@@ -5,6 +5,7 @@ import wave
 import numpy as np
 import split
 import os
+import ziped
 
 app = Flask(__name__)
 api = Api(app)
@@ -17,7 +18,7 @@ api.add_resource(TesteApi, '/')
 
 class UploadDownloadWavAPI(Resource):
     def post(self):
-        os.system("rm -rf files/separate/audio")
+        os.system("rm -rf files/separate/audio")        
         parse = reqparse.RequestParser()
         parse.add_argument('audio', type=FileStorage, location='files')
 
@@ -29,6 +30,7 @@ class UploadDownloadWavAPI(Resource):
         split.separa(2,"files/audio.wav")
         #split.separa(4,wav_file)
         os.system("rm -rf files/audio.wav")
+        ziped.zipFilesInDir('files/separate/', 'files/separate/audio/extractFiles.zip', lambda name : 'wav' in name)
         return "audio processado pelo split"                        
 
 api.add_resource(UploadDownloadWavAPI, '/upload')
