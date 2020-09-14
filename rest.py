@@ -17,7 +17,7 @@ class DownloadAPI(Resource):
         
 api.add_resource(DownloadAPI, '/download')            
 
-class UploadPI(Resource):
+class UploadAPI(Resource):
     def post(self):
         os.system("rm -rf files/separate/audio")        
         parse = reqparse.RequestParser()
