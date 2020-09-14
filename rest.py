@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_restful import Resource, Api, reqparse
 from werkzeug.datastructures import FileStorage
 import wave
@@ -10,13 +10,14 @@ import ziped
 app = Flask(__name__)
 api = Api(app)
 
-class TesteApi(Resource):
+class DownloadAPI(Resource):
     def get(self):        
-        return {'Teste': 'Api'}
+        #return {'Teste': 'Api'}
+        return send_from_directory('files/separate/audio','extractFiles.zip') 
         
-api.add_resource(TesteApi, '/')            
+api.add_resource(DownloadAPI, '/download')            
 
-class UploadDownloadWavAPI(Resource):
+class UploadPI(Resource):
     def post(self):
         os.system("rm -rf files/separate/audio")        
         parse = reqparse.RequestParser()
@@ -31,9 +32,10 @@ class UploadDownloadWavAPI(Resource):
         #split.separa(4,wav_file)
         os.system("rm -rf files/audio.wav")
         ziped.zipFilesInDir('files/separate/', 'files/separate/audio/extractFiles.zip', lambda name : 'wav' in name)
-        return "audio processado pelo split"                        
 
-api.add_resource(UploadDownloadWavAPI, '/upload')
+        return "Separação da fonte musical concluída, pronto para Download"                       
+
+api.add_resource(UploadAPI, '/upload')
 
 if __name__ == '__main__':
     app.run(debug=True)
