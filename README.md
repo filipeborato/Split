@@ -6,5 +6,5 @@
  
  source venv/bin/activate
  
- # intalar requesitos e bibliotecas
+ # instalar requesitos e bibliotecas
  pip install -r requirements.txt
