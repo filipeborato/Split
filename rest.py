@@ -10,6 +10,12 @@ import ziped
 app = Flask(__name__)
 api = Api(app)
 
+class TestApi(Resource):
+    def get(self):
+        return {'Teste':'Api'}
+
+api.add_resource(TestApi, '/')
+
 class DownloadAPI(Resource):
     def get(self):        
         #return {'Teste': 'Api'}
