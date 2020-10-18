@@ -1,8 +1,6 @@
 from flask import Flask, send_from_directory
 from flask_restful import Resource, Api, reqparse
 from werkzeug.datastructures import FileStorage
-import wave
-import numpy as np
 import split
 import os
 import ziped
