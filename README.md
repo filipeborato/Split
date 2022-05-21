@@ -1,19 +1,25 @@
 # Split
  API that hosts the Spleeter neural network and uploads and downloads files via REST.
  
- # Crie um ambiente python virtual no linux
+ # Create a virtual python environment on linux
  python3.6 -m venv venv
  
  source venv/bin/activate
  
- # instalar requesitos e bibliotecas
+ # install requirements and libraries
  pip install -r requirements.txt
 
- # Rodar a aplicação em Rest 
-Comando dentro da pasta do projeto: python rest.py
+ # Run the application in the Rest.py file, for now.
+Command inside project folder: python rest.py
 
-127.0.0.1:5000/ - GET - Retorna uma string de teste em formato Json
+127.0.0.1:5000/ - GET - Returns a test string in Json format
 
-127.0.0.1:5000/upload - POST - Upload de arquivo por parâmetro no Body - "audio" : <nameFile> - e processamento da rede neural
+127.0.0.1:5000/upload - POST - File upload by parameter in Body - "audio" : <nameFile> - and neural network processing
  
-127.0.0.1:5000/download - GET - Download da última faixa processada pela rede neural
+127.0.0.1:5000/download - GET - Download the last track processed by the neural network
+ 
+#Split connects to another project of mine called CompressorAndSplit
+
+The Split project is coupled to a plugin I created with the name Boratio, in C++ with Juce Framework, and it's a github project called CompressorAndSplit
+ 
+ 
