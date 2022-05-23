@@ -21,5 +21,8 @@ Command inside project folder: python rest.py
 #Split connects to another project of mine called CompressorAndSplit
 
 The Split project is coupled to a plugin I created with the name Boratio, in C++ with Juce Framework, and it's a github project called CompressorAndSplit
+
+# THIS IS MY SERVER AND HE HOSTED MY NEURAL NETWORK
+this project is a neural network that removes or separates the voice between the instruments
  
  
