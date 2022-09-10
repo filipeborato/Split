@@ -6,10 +6,10 @@
  
  source venv/bin/activate
  
- # install requirements and libraries
+ ### install requirements and libraries
  pip install -r requirements.txt
 
- # Run the application in the Rest.py file, for now.
+ ### Run the application in the Rest.py file, for now.
 Command inside project folder: python rest.py
 
 127.0.0.1:5000/ - GET - Returns a test string in Json format
@@ -18,11 +18,11 @@ Command inside project folder: python rest.py
  
 127.0.0.1:5000/download - GET - Download the last track processed by the neural network
  
-#Split connects to another project of mine called CompressorAndSplit
+###Split connects to another project of mine called CompressorAndSplit
 
 The Split project is coupled to a plugin I created with the name Boratio, in C++ with Juce Framework, and it's a github project called CompressorAndSplit
 
-# THIS IS MY SERVER AND HE HOSTED MY NEURAL NETWORK
+### THIS IS MY SERVER AND HE HOSTED MY NEURAL NETWORK
 this project is a neural network that removes or separates the voice between the instruments
  
  
