@@ -1,5 +1,5 @@
 # Split
- API that hosts the Spleeter neural network and uploads and downloads files via REST.
+ API that hosts the Spleeter neural network for source music separation and uploads and downloads files via REST.
  
 ### Python Version on the project was made:
 ``
