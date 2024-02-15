@@ -1,9 +1,10 @@
 from flask import Flask, send_from_directory
 from flask_restful import Resource, Api, reqparse
 from werkzeug.datastructures import FileStorage
-import split
+from app.split import separa
 import os
-import ziped
+from app.ziped import zipFilesInDir
+
 
 app = Flask(__name__)
 api = Api(app)
@@ -32,10 +33,10 @@ class UploadAPI(Resource):
         
         stream.save("files/audio.wav")
                
-        split.separa(2,"files/audio.wav")
+        separa(2, "files/audio.wav")
         #split.separa(4,wav_file)
         os.system("rm -rf files/audio.wav")
-        ziped.zipFilesInDir('files/separate/', 'files/separate/audio/extractFiles.zip', lambda name : 'wav' in name)
+        zipFilesInDir('files/separate/', 'files/separate/audio/extractFiles.zip', lambda name : 'wav' in name)
 
         return "Separação da fonte musical concluída, pronto para Download"                       
 
