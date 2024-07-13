@@ -3,3 +3,6 @@
 /files/separate
 /__pycache__
 /spleeter
+
+.venv/
+/venv3-8
