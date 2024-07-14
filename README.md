@@ -34,13 +34,20 @@ python app.py
 ```
 
 ### Routes: 
-```
+``
 127.0.0.1:5000/ - GET - Returns a test string in Json format
+``
 
-127.0.0.1:5000/upload - POST - File upload by parameter in Body - "audio" : <nameFile> - and neural network processing
- 
-127.0.0.1:5000/download - GET - Download the last track processed by the neural network
+``
+127.0.0.1:5000/upload - POST - File upload by parameter in Body - "audio" : <nameFile> - and neural network processing:
+``
 ```
+curl --location '127.0.0.1:5000/upload' \
+--form 'audio=@"/home/filipe-borato/Documents/It dont mean i think_ master.mp3"'
+```
+``
+127.0.0.1:5000/download - GET - Download the last track processed by the neural network
+``
 ### Split connects to another project of mine called CompressorAndSplit
 
 The Split project is coupled to a plugin I created with the name Boratio, in C++ with Juce Framework, and it's a github project called CompressorAndSplit
