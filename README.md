@@ -10,7 +10,7 @@ V3.6
 V3.6.15
 ``
 
-### Intall PyEnv to manage the multiple Versions:
+### Install PyEnv to manage the multiple Versions:
 
 https://realpython.com/intro-to-pyenv/
  
