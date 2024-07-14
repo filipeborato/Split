@@ -30,7 +30,7 @@ https://realpython.com/intro-to-pyenv/
  ### Run the application in the Rest.py file, for now.
 Command inside project folder: 
 ```
-python rest.py
+python app.py
 ```
 
 ### Routes: 

@@ -6,3 +6,4 @@
 
 .venv/
 /venv3-8
+app/__pycache__/*
