@@ -5,14 +5,22 @@
 ``
 V3.6
 ``
+### The Last Python Version that works is here:
+``
+V3.6.15
+``
+
+### Intall PyEnv to manage the multiple Versions:
+
+https://realpython.com/intro-to-pyenv/
  
- ### Create a virtual python environment on linux
+ ### Create a virtual Python3.8 environment on Linux, Win, or Mac:
  ```
- python -m venv venv
+ python -m venv venv3-8
  ```
  
  ```
- source venv/bin/activate
+ source venv3-8/bin/activate
  ```
  ### install requirements and libraries
  ```
