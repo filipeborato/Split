@@ -1,9 +1,8 @@
 from flask import Flask, send_from_directory, make_response
 from flask_restful import Resource, Api, reqparse
 from werkzeug.datastructures import FileStorage
-from utils import split
+from utils import split, ziped
 import os, json
-from utils import ziped
 
 app = Flask(__name__)
 api = Api(app)
