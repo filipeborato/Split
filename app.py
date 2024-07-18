@@ -1,16 +1,27 @@
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, make_response
 from flask_restful import Resource, Api, reqparse
 from werkzeug.datastructures import FileStorage
-from utils import split
-import os
-from utils import ziped
+from utils import split, ziped
+import os, json
 
 app = Flask(__name__)
 api = Api(app)
 
+@api.representation('application/json')
+def output_json(data, code, headers=None):
+    """Makes a Flask response with a JSON encoded body"""
+    resp = make_response(json.dumps(data), code)
+    resp.headers.extend(headers or {})
+    return resp
+
 class TestApi(Resource):
     def get(self):
-        return {'Teste':'Api'}
+        data = {
+            "response": "Test Api",
+            "status": True,
+        }
+
+        return output_json(data, 200)
 
 api.add_resource(TestApi, '/')
 
@@ -37,7 +48,12 @@ class UploadAPI(Resource):
         os.system("rm -rf files/audio.wav")
         ziped.zipFilesInDir('files/separate/', 'files/separate/audio/extractFiles.zip', lambda name : 'wav' in name)
 
-        return "Separação da fonte musical concluída, pronto para Download"                       
+        data = {
+            "response": "Source separation fineshed",
+            "status": True,
+        }
+
+        return output_json(data, 200)                       
 
 api.add_resource(UploadAPI, '/upload')
 
