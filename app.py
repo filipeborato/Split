@@ -1,7 +1,6 @@
 from flask import Flask, send_from_directory, make_response
 from flask_restful import Resource, Api, reqparse
 from werkzeug.datastructures import FileStorage
-from werkzeug.exceptions import HTTPException
 from utils import split, ziped
 import os, json
 
