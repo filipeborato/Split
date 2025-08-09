@@ -1,16 +1,16 @@
 # Split
  API that hosts the Spleeter neural network for source music separation and uploads and downloads files via REST.
  
-### Python Version on the project was made:
+### Python Version used in the project was:
 ``
 V3.6
 ``
 ### The Last Python Version that works is here:
 ``
-V3.6.15
+V3.7
 ``
 
-### Install PyEnv to manage the multiple Versions:
+### Install PyEnv to manage multiple Versions:
 
 https://realpython.com/intro-to-pyenv/
  
