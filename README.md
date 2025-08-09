@@ -56,3 +56,27 @@ The Split project is coupled to a plugin I created with the name Boratio, in C++
 this project is a neural network that removes or separates the voice between the instruments
  
  
+
+## Prerequisite: FFmpeg
+
+Spleeter uses FFmpeg to decode audio (mp3, wav, etc). Make sure `ffmpeg` is installed and available on your PATH before using `/upload`.
+
+- Ubuntu/Debian (WSL/Linux):
+  ```
+  sudo apt-get update && sudo apt-get install -y ffmpeg
+  ```
+- macOS (Homebrew):
+  ```
+  brew install ffmpeg
+  ```
+- Windows:
+  - Using winget: `winget install Gyan.FFmpeg`
+  - Or Chocolatey: `choco install ffmpeg`
+  - Ensure the `bin` folder (containing `ffmpeg.exe`) is added to your PATH.
+
+Verify installation:
+```
+ffmpeg -version
+```
+
+Restart the Flask server after installation.

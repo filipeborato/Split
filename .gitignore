@@ -7,3 +7,16 @@
 .venv/
 /venv3-8
 app/__pycache__/*
+
+# Arquivos de cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cache de build / distribuição
+build/
+dist/
+*.egg-info/
+
+# Arquivos temporários de testes
+.pytest_cache/
