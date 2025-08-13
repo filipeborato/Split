@@ -1,0 +1,20 @@
+# Requirements para Python 3.11 com Demucs (alternativa moderna ao Spleeter)
+# Core dependencies para o projeto
+Flask==3.0.0
+Flask-RESTful==0.3.10
+Werkzeug==3.0.1
+
+# Audio processing - Demucs (melhor que Spleeter)
+demucs>=4.0.0
+torch>=2.0.0
+torchaudio>=2.0.0
+librosa>=0.10.0
+audioread>=3.0.0
+SoundFile>=0.12.0
+ffmpeg-python>=0.2.0
+
+# Utilities
+numpy>=1.24.0
+scipy>=1.11.0
+requests>=2.31.0
+click>=8.1.0
